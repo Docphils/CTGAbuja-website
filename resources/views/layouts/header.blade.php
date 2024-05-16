@@ -17,7 +17,7 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-green-600 text-black/50 dark:bg-black dark:text-white/50">
+        <div class="bg-gray-900 text-black/50 dark:bg-black dark:text-white/50">
             <div class="relative min-h-screen flex flex-col items-center selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                     <header class="grid grid-cols-2 items-center gap- py-10 lg:grid-cols-3">
@@ -29,23 +29,23 @@
                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         Home
                                     </a>
-                                    <a href="{{ url('about') }}"
+                                    <a href="{{ route('about') }}"
                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         About
                                     </a>
-                                    <a href="{{ url('ministries') }}"
+                                    <a href="{{ route('ministries') }}"
                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         Ministries
                                     </a>
-                                    <a href="{{ url('sermons') }}"
+                                    <a href="{{ route('sermons') }}"
                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         Sermons
                                     </a>
-                                    <a href="{{ url('events') }}"
+                                    <a href="{{ route('programs') }}"
                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Events
+                                        Programs
                                     </a>
-                                    <a href="{{ url('contact') }}"
+                                    <a href="{{ route('contact') }}"
                                         class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         Contact
                                     </a>

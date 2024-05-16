@@ -1,31 +1,23 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\MinistryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function () {
-    return view('about');
-});
+Route::get('about', [PagesController::class, 'about'])->name('about');
 
-Route::get('ministries', function () {
-    return view('ministries');
-});
+Route::get('ministries', [PagesController::class, 'ministries'])->name('ministries');
 
-Route::get('sermons', function () {
-    return view('sermons');
-});
+Route::get('sermons', [PagesController::class, 'sermons'])->name('sermons');
 
-Route::get('events', function () {
-    return view('events');
-});
+Route::get('programs', [PagesController::class, 'programs'])->name('programs');
 
-Route::get('contact', function () {
-    return view('contact');
-});
+Route::get('contact', [PagesController::class, 'contact'])->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,5 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//Route::any('/ministries', [MinistryController::class, ]);
 
 require __DIR__.'/auth.php';

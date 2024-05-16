@@ -4,7 +4,7 @@
                             <a
                                 href="#"
                                 id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-green-600 p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-white/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
+                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-gray-900 p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-white/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
                             >
                                 <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
                                     <img
@@ -18,6 +18,13 @@
                                             document.getElementById('background').classList.add('!hidden');
                                         "
                                     />
+                                    <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+                                        <div class="text-white text-center">
+                                            <h1 class="text-yellow-400 text-6xl font-fugaz font-bold">Welcome to CTG</h1>
+                                            <hr><br>
+                                            <p class="animate-bounce font-cookie text-4xl">Where Jesus Lives!</p>
+                                        </div>
+                                    </div>
                                     <img
                                         src="https://laravel.com/assets/img/welcome/docs-dark.svg"
                                         alt="Welcome note icon"
@@ -34,18 +41,19 @@
 
                                         <div class="text-center pt-3 sm:pt-5 lg:pt-0">
 
-                                            <p class="mt-4 text-lg/relaxed text-white">
-                                                Welcome to Anglican Church of Transfiguration Gaduwa, Abuja. <br> Where Jesus Lives!<br> You Belong Here!
+                                            <p class="mt-4 text-xl/relaxed font-cookie text-white">
+                                                This is Anglican Church of Transfiguration Gaduwa, Abuja. 
+                                                <br> You belong here! Become a member....
                                             </p>
                                         </div>
                                     </div>
 
-                                    <svg class="size-6 shrink-0 stroke-[#FFFFFF]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                                    <svg class="animate-pulse size-6 shrink-0 stroke-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
                                 </div>
                             </a>
 
                             <a
-                                href="https://laracasts.com"
+                                href="{{ route('about')}}"
                                 class="flex items-start gap-4 rounded-lg bg-yellow-600 p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-white/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
                             >
                                 <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
@@ -53,10 +61,10 @@
                                 </div>
 
                                 <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-white dark:text-white">Laracasts</h2>
+                                    <h2 class="text-xl font-semibold text-white dark:text-white">About Us</h2>
 
                                     <p class="mt-4 text-sm/relaxed text-white">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                        CTG is a place where God's children express themselves in the fullness of their God given potentials. We pride ourselves in leading worshippers to experience the splendor of God's glory through worship, prayer, word and power.
                                     </p>
                                 </div>
 

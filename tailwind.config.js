@@ -15,7 +15,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                
+                'fugaz': ['Fugaz One', 'sans-serif'],
+                'cookie': ['Cookie', 'cursive'],
             },
         },
     },
