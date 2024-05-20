@@ -1,4 +1,7 @@
 @include('layouts.header')
+@php
+    $latestGalleries = \App\Models\Gallery::latest()->take(3)->get();
+@endphp
         <main class="mt-6 container mx-auto py-12 px-4 text-white">
                 <!-- Mission Section -->
                 <section id="mission" class="mb-12">
@@ -20,28 +23,17 @@
                 <section id="gallery" class="mb-12">
                     <h2 class="text-3xl font-bold mb-4">Gallery</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        @foreach($latestGalleries as $gallery)
                         <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl">
-                            <img class="w-full h-auto" src="images/fullchurch.jpg" alt="Gallery Image 1">
+                            <img class="w-full h-auto" src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery Image 1">
                             <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50">
-                                <p class="text-white text-lg font-semibold">Event 1</p>
+                                <p class="text-white text-lg font-semibold">{{$gallery->title}}</p>
                             </div>
                         </div>
-                        <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl">
-                            <img class="w-full h-auto" src="images/fullchurch.jpg" alt="Gallery Image 2">
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50">
-                                <p class="text-white text-lg font-semibold">Event 2</p>
-                            </div>
-                        </div>
-                        <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl">
-                            <img class="w-full h-auto" src="images/fullchurch.jpg" alt="Gallery Image 3">
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50">
-                                <p class="text-white text-lg font-semibold">Event 3</p>
-                            </div>
-                        </div>
-                        <!-- Add more gallery items as needed -->
+                        @endforeach
                     </div>
                     <div class="mt-8 text-center">
-                        <a href="/gallery" class="inline-block px-6 py-3 text-lg font-semibold text-blue-600 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300 ease-in-out">
+                        <a href="{{ route('gallery.index')}}" class="inline-block px-6 py-3 text-lg font-semibold text-blue-600 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300 ease-in-out">
                             View More
                         </a>
                     </div>

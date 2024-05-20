@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MinistryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GalleryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +19,11 @@ Route::get('sermons', [PagesController::class, 'sermons'])->name('sermons');
 Route::get('programs', [PagesController::class, 'programs'])->name('programs');
 
 Route::get('contact', [PagesController::class, 'contact'])->name('contact');
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+
+Route::resource('gallery', GalleryController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
