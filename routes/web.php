@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MinistryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\WorkersController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,8 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index
 
 Route::resource('gallery', GalleryController::class);
 
+Route::resource('workers', WorkersController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,6 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//Route::any('/ministries', [MinistryController::class, ]);
+//Route::resource('ministries', MinistryController::class);
 
 require __DIR__.'/auth.php';

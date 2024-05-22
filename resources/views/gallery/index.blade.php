@@ -8,7 +8,7 @@
             <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->title }}" class="rounded-t-lg w-full h-64 object-cover">
             <div class="p-4">
                 <h2 class="text-2xl font-bold mb-2">{{ $gallery->title }}</h2>
-                <p class="text-purple-700">{{ $gallery->description }}</p>
+                <p class="text-purple-700 line-clamp-1">{{ $gallery->description }}</p>
                 <div class="flex justify-between mx-auto text-blue-600">
                     <a href="{{ route('gallery.show', $gallery->id) }}" class=" bg-purple-700 text-white rounded-lg px-2 py-1 hover:underline">View Details</a>
                     <form action="{{ route('gallery.destroy', $gallery->id) }}" method="POST" >
