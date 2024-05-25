@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Route::get('about', [PagesController::class, 'about'])->name('about');
 
-Route::get('ministries', [PagesController::class, 'ministries'])->name('ministries');
+Route::get('ministry', [PagesController::class, 'ministry'])->name('ministry');
 
 Route::get('sermons', [PagesController::class, 'sermons'])->name('sermons');
 

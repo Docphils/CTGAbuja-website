@@ -12,9 +12,9 @@ class PagesController extends Controller
         return view('about');
     }
 
-    public function ministries(){
+    public function ministry(){
         
-        return view('ministries');
+        return view('ministry');
     }
 
     public function sermons(){
