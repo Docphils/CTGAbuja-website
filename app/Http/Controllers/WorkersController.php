@@ -11,10 +11,9 @@ class WorkersController extends Controller
     //
     public function index()
     {
-        $clergy = Worker::where('position', 'clergy')->get();
-        $otherWorkers = Worker::where('position', 'other_workers')->get();
-
-        return view('workers.index', compact('clergy', 'otherWorkers'));
+        $workers = Worker::all();
+        
+        return view('workers.index', compact('workers'));
     }
 
     public function create()
@@ -31,13 +30,14 @@ class WorkersController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'description' => 'nullable|string',
         ]);
-
+        
         $imagePath = $request->file('image')->store('images', 'public');
 
         Worker::create([
-            'title' => $request->title,
-            'position'=> $request->position,
+            'name' => $request->name,
+            'type'=> $request->type,
             'image_path' => $imagePath,
+            'position' => $request->position,
             'description' => $request->description,
         ]);
 

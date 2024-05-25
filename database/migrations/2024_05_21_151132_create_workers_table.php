@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('workers', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->enum('position', ['clergy', 'other_workers']);
+            $table->string('name');
+            $table->enum('type', ['clergy', 'other_workers']);
             $table->string('image_path');
+            $table->string('position');
             $table->text('description')->nullable();
             $table->timestamps();
         });

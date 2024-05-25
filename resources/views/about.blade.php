@@ -1,6 +1,8 @@
 @include('layouts.header')
 @php
     $latestGalleries = \App\Models\Gallery::latest()->take(3)->get();
+    $clergy = \App\Models\Worker::where('type', 'clergy')->get();
+    $otherWorkers = \App\Models\Worker::where('type', 'other_workers')->get();
 @endphp
         <main class="mt-6 container mx-auto py-12 px-4 text-white">
                 <!-- Mission Section -->
@@ -48,21 +50,17 @@
                     <div id="clergy" class="mb-8">
                         <h3 class="text-2xl font-semibold mb-2">Clergy</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            @foreach($clergy as $clergy)
                             <div class="bg-blue-300 p-4 rounded-lg shadow-md hover:shadow-lg">
-                                <img class="w-full h-48 object-cover rounded-t-lg" src="clergy1.jpg" alt="Clergy 1">
-                                <div class="p-4">
-                                    <h4 class="text-xl font-bold">Revd. Can. Nelson Akinwade</h4>
-                                    <p class="text-gray-400">Vicar</p>
+                                <a href="{{ route('workers.show', $clergy->id) }}"><img class="w-full h-48 object-cover rounded-t-lg" src="{{ asset('storage/' . $clergy->image_path) }}" alt="Clergy">
+                                <div class="p-4 pb-1 pl-0">
+                                    <h4 class="text-xl font-bold">{{$clergy->name}}</h4>
+                                    <p class="text-purple-600">{{$clergy->position}}</p>
                                 </div>
+                            </a>
                             </div>
-                            <div class="bg-blue-300 p-4 rounded-lg shadow-md hover:shadow-lg">
-                                <img class="w-full h-48 object-cover rounded-t-lg" src="clergy2.jpg" alt="Clergy 2">
-                                <div class="p-4">
-                                    <h4 class="text-xl font-bold">Reverend Caleb Udochukwu</h4>
-                                    <p class="text-gray-400">Curate</p>
-                                </div>
-                            </div>
-                            <!-- Add more clergy members as needed -->
+                        
+                            @endforeach
                         </div>
                     </div>
             
@@ -70,27 +68,17 @@
                     <div id="other-workers">
                         <h3 class="text-2xl font-semibold mb-2">Other Workers</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            @foreach($otherWorkers as $otherWorker)
                             <div class="bg-blue-300 p-4 rounded-lg shadow-md hover:shadow-lg">
-                                <img class="w-full h-48 object-cover rounded-t-lg" src="worker1.jpg" alt="Worker 1">
-                                <div class="p-4">
-                                    <h4 class="text-xl font-bold">Mr Opeyemi Oladele</h4>
-                                    <p class="text-gray-400">Choir Director</p>
+                                <a href="{{ route('workers.show', $otherWorker->id) }}"><img class="w-full h-48 object-cover rounded-t-lg" src="{{ asset('storage/' . $clergy->image_path) }}" alt="Worker">
+                                    <div class="p-4 pl-0 pb-1">
+                                    <h4 class="text-xl font-bold">{{$otherWorker->name}}</h4>
+                                    <p class="text-purple-600">{{$otherWorker->position}}</p>
+                                </a>
                                 </div>
+                            @endforeach
                             </div>
-                            <div class="bg-blue-300 p-4 rounded-lg shadow-md hover:shadow-lg">
-                                <img class="w-full h-48 object-cover rounded-t-lg" src="worker2.jpg" alt="Worker 2">
-                                <div class="p-4">
-                                    <h4 class="text-xl font-bold">Mrs Amaka Amuta</h4>
-                                    <p class="text-gray-400">Pastor's Warden</p>
-                                </div>
-                            </div>
-                            <div class="bg-blue-300 p-4 rounded-lg shadow-md hover:shadow-lg">
-                                <img class="w-full h-48 object-cover rounded-t-lg" src="worker2.jpg" alt="Worker 2">
-                                <div class="p-4">
-                                    <h4 class="text-xl font-bold">Mr Ruben Akitunde</h4>
-                                    <p class="text-gray-400">People's Warden</p>
-                                </div>
-                            </div>
+                           
                             <!-- Add more other workers as needed -->
                         </div>
                     </div>

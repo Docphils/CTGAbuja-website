@@ -109,7 +109,7 @@
                                     <!-- Gallery items -->
                                     @foreach($latestGalleries as $gallery)
                                     <a href="{{ route('gallery.show', $gallery->id) }}" class="relative h-full max-h-36">
-                                        <div class="relative h-auto max-h-36 overflow-hidden rounded-lg shadow-md hover:shadow-xl">
+                                        <div class="relative h-full max-h-36 overflow-hidden rounded-lg shadow-md hover:shadow-xl">
                                             <img class="relative w-full h-full" src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery image">
                                             <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50">
                                                 <p class="text-white text-lg font-semibold">{{ $gallery->title }}</p>

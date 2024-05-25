@@ -7,7 +7,7 @@
             <div class="mx-auto">
                 <h1 class="text-2xl text-start font-bold mb-3">{{ $gallery->title }}</h1>
                 <div class="bg-blue-300 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out mb-4">
-                    <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->title }}" class="rounded-t-lg w-full h-full max-h-96 object-cover">
+                    <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->title }}" class="rounded-t-lg w-full h-full max-h-100 object-cover">
                     <div class="p-4">
                         <p class=" text-start text-white">{{ $gallery->description }}</p>
                     </div>

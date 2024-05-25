@@ -5,7 +5,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($galleries as $gallery)
         <div class="bg-blue-300 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
-            <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->title }}" class="rounded-t-lg w-full h-64 object-cover">
+            <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->title }}" class="rounded-t-lg w-full h-auto max-h-64 object-cover">
             <div class="p-4">
                 <h2 class="text-2xl font-bold mb-2">{{ $gallery->title }}</h2>
                 <p class="text-purple-700 line-clamp-1">{{ $gallery->description }}</p>
