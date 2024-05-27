@@ -13,8 +13,6 @@ Route::get('/', function () {
 
 Route::get('about', [PagesController::class, 'about'])->name('about');
 
-Route::get('ministry', [PagesController::class, 'ministry'])->name('ministry');
-
 Route::get('sermons', [PagesController::class, 'sermons'])->name('sermons');
 
 Route::get('programs', [PagesController::class, 'programs'])->name('programs');
@@ -27,7 +25,6 @@ Route::resource('gallery', GalleryController::class);
 
 Route::resource('workers', WorkersController::class);
 
-Route::resource('ministries', MinistryController::class);
 
 
 
@@ -39,6 +36,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('ministries', MinistryController::class)->except(['index', 'show']);
+
 });
+
+Route::resource('ministries', MinistryController::class)->only(['show', 'index']);
+
 
 require __DIR__.'/auth.php';

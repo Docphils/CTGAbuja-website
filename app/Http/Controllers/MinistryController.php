@@ -2,65 +2,93 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Ministry;
-use App\Http\Requests\StoreMinistryRequest;
-use App\Http\Requests\UpdateMinistryRequest;
 
 class MinistryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $ministries = Ministry::all();
+        return view('ministries.index', compact('ministries'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function show($id)
+    {
+        $ministry = Ministry::findOrFail($id);
+        return view('ministries.show', compact('ministry'));
+    }
+
     public function create()
     {
-        //
+        return view('ministries.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreMinistryRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'facebook_url' => 'nullable|url',
+            'instagram_url' => 'nullable|url',
+        ]);
+
+        $imagePath = $request->file('image')->store('images', 'public');
+
+        Ministry::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image_path' => $imagePath,
+            'facebook_url' => $request->facebook_url,
+            'instagram_url' => $request->instagram_url,
+        ]);
+
+        return redirect()->route('ministries.index')->with('success', 'Ministry created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Ministry $ministry)
+    public function edit($id)
     {
-        //
+        $ministry = Ministry::findOrFail($id);
+        return view('ministries.edit', compact('ministry'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Ministry $ministry)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'facebook_url' => 'nullable|url',
+            'instagram_url' => 'nullable|url',
+        ]);
+
+        $ministry = Ministry::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $ministry->image_path = $imagePath;
+        }
+
+        $ministry->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'facebook_url' => $request->facebook_url,
+            'instagram_url' => $request->instagram_url,
+        ]);
+
+        return redirect()->route('ministries.index')->with('success', 'Ministry updated successfully.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateMinistryRequest $request, Ministry $ministry)
+    public function destroy($id)
     {
-        //
-    }
+        $ministry = Ministry::findOrFail($id);
+        $ministry->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Ministry $ministry)
-    {
-        //
+        return redirect()->route('ministries.index')->with('success', 'Ministry deleted successfully.');
     }
 }
+
+
+?>

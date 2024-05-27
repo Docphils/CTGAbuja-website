@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
         <!-- Styles -->
         <style>
@@ -33,7 +34,7 @@
                                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         {{ __('About') }}
                                     </x-nav-link>
-                                    <x-nav-link :href="route('ministry')" :active="request()->routeIs('ministry')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    <x-nav-link :href="route('ministries.index')" :active="request()->routeIs('ministries')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         {{ __('Ministries') }}
                                     </x-nav-link>
                                     <x-nav-link :href="route('sermons')" :active="request()->routeIs('sermons')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">

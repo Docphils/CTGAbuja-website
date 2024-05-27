@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('ministries', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->string('image_path');
+            $table->string('facebook_url')->nullable();
+            $table->string('instagram_url')->nullable();
             $table->timestamps();
         });
     }
