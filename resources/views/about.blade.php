@@ -45,6 +45,11 @@
                 <!-- Workers Section -->
                 <section id="workers">
                     <h2 class="text-3xl font-bold mb-4">Our Workers</h2>
+                    @if(auth()->check())
+                    <div class="flex justify-end">
+                        <a href="{{ route('workers.create') }}" class="bg-blue-300 text-white py-2 px-4 rounded-lg mb-2 inline-block">Add Clergy</a>
+                    </div>
+                    @endif
                     
                     <!-- Clergy Section -->
                     <div id="clergy" class="mb-8">
@@ -67,6 +72,11 @@
                     <!-- Other Workers Section -->
                     <div id="other-workers">
                         <h3 class="text-2xl font-semibold mb-2">Other Workers</h3>
+                        @if(auth()->check())
+                        <div class="flex justify-end">
+                            <a href="{{ route('workers.create') }}" class="bg-blue-300 text-white py-2 px-4 rounded-lg mb-2 inline-block">Add Worker</a>
+                        </div>
+                        @endif
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             @foreach($otherWorkers as $otherWorker)
                             <div class="bg-blue-300 p-4 rounded-lg shadow-md hover:shadow-lg">
