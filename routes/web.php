@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SermonsController;
 use App\Http\Controllers\WorkersController;
+use App\Http\Controllers\ProgramsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,11 +39,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('ministries', MinistryController::class)->except(['index', 'show']);
+    Route::resource('programs', ProgramsController::class)->except(['index', 'show']);
 
 });
 
 Route::resource('ministries', MinistryController::class)->only(['show', 'index']);
 Route::resource('sermons', SermonsController::class)->only(['show', 'index']);
+Route::resource('programs', ProgramsController::class)->only(['show', 'index']);
 
 
 

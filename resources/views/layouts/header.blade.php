@@ -34,13 +34,13 @@
                                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         {{ __('About') }}
                                     </x-nav-link>
-                                    <x-nav-link :href="route('ministries.index')" :active="request()->routeIs('ministries')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    <x-nav-link :href="route('ministries.index')" :active="request()->routeIs('ministries.index')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         {{ __('Ministries') }}
                                     </x-nav-link>
-                                    <x-nav-link :href="route('sermons.index')" :active="request()->routeIs('sermons')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    <x-nav-link :href="route('sermons.index')" :active="request()->routeIs('sermons.index')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         {{ __('Sermons') }}
                                     </x-nav-link>
-                                    <x-nav-link :href="route('programs')" :active="request()->routeIs('programs')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    <x-nav-link :href="route('programs.index')" :active="request()->routeIs('programs.index')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         {{ __('Programs') }}
                                     </x-nav-link>
                                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">

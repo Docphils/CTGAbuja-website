@@ -22,13 +22,22 @@ class SermonsController extends Controller
     $channelId = 'UCpfSzm2i2qUKFHc8QSWmOFg';
     $response = $service->search->listSearch('snippet', [
         'channelId' => $channelId,
-        'maxResults' => 5,
+        'maxResults' => 6,
         'order' => 'date',
+    ]);
+
+    // Fetch live broadcasts from the channel
+    $liveResponse = $service->search->listSearch('snippet', [
+        'channelId' => $channelId,
+        'eventType' => 'live',
+        'type' => 'video',
+        'maxResults' => 1, 
     ]);
 
     # Pass the response to the view
     $videos = $response->getItems();
+    $liveBroadcast = !empty($liveResponse['items']) ? $liveResponse['items'][0] : null;
     
-    return view('sermons.index', compact('videos'));
+    return view('sermons.index', compact('videos', 'liveBroadcast'));
     }
 }
