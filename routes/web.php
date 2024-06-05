@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MinistryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\SermonsController;
 use App\Http\Controllers\WorkersController;
 
 Route::get('/', function () {
@@ -41,6 +42,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('ministries', MinistryController::class)->only(['show', 'index']);
+Route::resource('sermons', SermonsController::class)->only(['show', 'index']);
+
 
 
 require __DIR__.'/auth.php';
