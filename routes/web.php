@@ -40,13 +40,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('ministries', MinistryController::class)->except(['index', 'show']);
     Route::resource('programs', ProgramsController::class)->except(['index', 'show']);
+    Route::get('programs/{id}/registrations', [ProgramsController::class, 'registrations'])->name('programs.registrations');
 
 });
 
 Route::resource('ministries', MinistryController::class)->only(['show', 'index']);
 Route::resource('sermons', SermonsController::class)->only(['show', 'index']);
 Route::resource('programs', ProgramsController::class)->only(['show', 'index']);
-
+Route::post('programs/{id}/register', [ProgramsController::class, 'register'])->name('programs.register');
+Route::get('programs/{id}/register', [ProgramsController::class, 'registerForm'])->name('programs.registerForm');
 
 
 require __DIR__.'/auth.php';

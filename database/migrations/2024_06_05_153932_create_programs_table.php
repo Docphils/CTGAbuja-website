@@ -14,7 +14,6 @@ class CreateProgramsTable extends Migration
             $table->text('description');
             $table->text('details')->nullable();
             $table->boolean('is_upcoming')->default(false);
-            $table->string('registration_link')->nullable();
             $table->timestamps();
         });
 
