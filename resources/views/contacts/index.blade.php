@@ -2,9 +2,25 @@
 
 <main class="container text-white mx-auto py-8 px-4">
 
+    @if (session('success'))
+        <div class="bg-green-500 text-white p-4 rounded mb-6">
+            {{ session('success') }}
+        </div>
+    @endif
+
+
     <!-- Contact Form Section -->
     <section id="contact-form" class="mb-12">
-        <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+        <div class="flex justify-between">
+            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+
+            <!-- Check if contact form messages are available and display the link -->
+            @if (\App\Models\Contact::count() > 0)
+                @if (auth()->check())
+                    <a href="{{ route('contacts.messages') }}" class="inline-block mb-6 mt-4 px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">View Contact Form Messages</a>
+                @endif
+            @endif
+        </div>
         <form action="{{ route('contacts.store') }}" method="POST" class="bg-blue-300 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
             @csrf
             <div class="mb-4">

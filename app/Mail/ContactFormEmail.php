@@ -31,7 +31,7 @@ class ContactFormEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Thanks for contacting ' . config('app.name'),
+            subject:  config('app.name') . ' contact form message',
         );
     }
 

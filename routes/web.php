@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MinistryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryController;
@@ -14,13 +14,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', [PagesController::class, 'about'])->name('about');
+Route::get('about', [AboutController::class, 'index'])->name('abouts.index');
 
-Route::get('sermons', [PagesController::class, 'sermons'])->name('sermons');
-
-Route::get('programs', [PagesController::class, 'programs'])->name('programs');
-
-Route::get('contact', [PagesController::class, 'contact'])->name('contact');
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
 
@@ -49,7 +44,24 @@ Route::middleware('auth')->group(function () {
     Route::get('activities/{activity}/edit', [ProgramsController::class, 'editActivity'])->name('activities.edit');
     Route::put('activities/{activity}', [ProgramsController::class, 'updateActivity'])->name('activities.update');
     Route::delete('activities/{activity}', [ProgramsController::class, 'destroyActivity'])->name('activities.destroy');
-    
+    // Resource routes for contact messages
+    Route::resource('contacts', ContactController::class)->except(['index', 'show', 'store']);
+    // Route to show all messages
+    Route::get('contacts/messages', [ContactController::class, 'messages'])->name('contacts.messages');
+
+    // Routes for editing and updating contact info
+    Route::get('contact-info/edit', [ContactController::class, 'editContactInfo'])->name('contact-info.edit');
+    Route::put('contact-info', [ContactController::class, 'updateContactInfo'])->name('contact-info.update');
+    Route::delete('contact-info/{contactInfo}', [ContactController::class, 'deleteContactInfo'])->name('contact-info.delete');
+
+    // Resource route for showing a single contact message
+    Route::get('contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
+
+    //About Page routes
+    Route::get('about/edit', [AboutController::class, 'edit'])->name('about.edit');
+    Route::post('about', [AboutController::class, 'update'])->name('about.update');
+
+  
 });
 
 Route::resource('ministries', MinistryController::class)->only(['show', 'index']);
@@ -59,22 +71,11 @@ Route::post('programs/{id}/register', [ProgramsController::class, 'register'])->
 Route::get('programs/{id}/register', [ProgramsController::class, 'registerForm'])->name('programs.registerForm');
 
 
-// Resource routes for contact messages
-Route::resource('contacts', ContactController::class)->except(['index', 'show', 'store']);
+
 
 // Custom routes for displaying and handling the contact form
 Route::get('contact', [ContactController::class, 'index'])->name('contacts.index');
 Route::post('contact', [ContactController::class, 'store'])->name('contacts.store');
 
-// Route to show all messages
-Route::get('contacts/messages', [ContactController::class, 'messages'])->name('contacts.messages');
-
-// Routes for editing and updating contact info
-Route::get('contact-info/edit', [ContactController::class, 'editContactInfo'])->name('contact-info.edit');
-Route::put('contact-info', [ContactController::class, 'updateContactInfo'])->name('contact-info.update');
-Route::delete('contact-info/{contactInfo}', [ContactController::class, 'deleteContactInfo'])->name('contact-info.delete');
-
-// Resource route for showing a single contact message
-Route::get('contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
 
 require __DIR__.'/auth.php';

@@ -31,7 +31,7 @@
                                         :class="{ 'text-yellow-400': {{ request()->routeIs('/') }} }">
                                         Home
                                     </a>
-                                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    <x-nav-link :href="route('abouts.index')" :active="request()->routeIs('abouts.index')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                         {{ __('About') }}
                                     </x-nav-link>
                                     <x-nav-link :href="route('ministries.index')" :active="request()->routeIs('ministries')" class="text-white text-xl rounded-md px-3  ring-1 ring-transparent transition hover:text-yellow-400 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">

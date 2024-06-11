@@ -1,7 +1,7 @@
 @include("layouts.header")
 
-<main class="container text-black mx-auto py-12 px-4">
-    <h1 class="text-4xl font-bold mb-8">Contact Form Submissions</h1>
+<main class="container text-black mx-auto py-8 px-4">
+    <h1 class="text-4xl text-white font-bold mb-8">Contact Form Submissions</h1>
 
     @if (session('success'))
         <div class="bg-green-500 text-white p-4 rounded mb-6">

@@ -6,17 +6,6 @@
             </div>
         </div>
 
-       <!-- <script>
-            // Script to handle the expandable cards
-            document.querySelectorAll('.expand-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const card = button.closest('.expandable-card');
-                    const hiddenContent = card.querySelector('div.hidden');
-                    card.classList.toggle('expanded');
-                    hiddenContent.classList.toggle('hidden');
-                    button.textContent = card.classList.contains('expanded') ? 'Show Less' : 'Read More';
-                });
-            });
-        </script>-->
+       
     </body>
 </html>
