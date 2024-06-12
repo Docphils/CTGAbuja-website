@@ -11,6 +11,7 @@ use App\Mail\ProgramsRegistrationEmail;
 use Illuminate\Support\Facades\Mail;
 
 
+
 class ProgramsController extends Controller
 {
     public function index()

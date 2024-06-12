@@ -61,16 +61,21 @@ Route::middleware('auth')->group(function () {
     Route::get('about/edit', [AboutController::class, 'edit'])->name('about.edit');
     Route::post('about', [AboutController::class, 'update'])->name('about.update');
 
+    //Routes for SermonVideos
+    Route::get('/sermons', [SermonsController::class, 'index'])->name('sermons.index');
+    Route::get('/sermons/create', [SermonsController::class, 'create'])->name('sermons.create');
+    Route::post('/sermons', [SermonsController::class, 'store'])->name('sermons.store');
+    Route::get('/sermons/{sermonVideo}/edit', [SermonsController::class, 'edit'])->name('sermons.edit');
+    Route::put('/sermons/{sermonVideo}', [SermonsController::class, 'update'])->name('sermons.update');
+    Route::delete('/sermons/{sermonVideo}', [SermonsController::class, 'destroy'])->name('sermons.destroy');
+
   
 });
 
 Route::resource('ministries', MinistryController::class)->only(['show', 'index']);
-Route::resource('sermons', SermonsController::class)->only(['show', 'index']);
 Route::resource('programs', ProgramsController::class)->only(['show', 'index']);
 Route::post('programs/{id}/register', [ProgramsController::class, 'register'])->name('programs.register');
 Route::get('programs/{id}/register', [ProgramsController::class, 'registerForm'])->name('programs.registerForm');
-
-
 
 
 // Custom routes for displaying and handling the contact form
