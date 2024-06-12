@@ -1,7 +1,7 @@
 <!-- resources/views/sermons/create.blade.php -->
 @include('layouts.header')
 
-<main class="container mx-auto text-white py-12 px-4 w-1/2">
+<main class="container mx-auto text-white py-12 px-4 w-1/2 shadow-lg rounded-lg">
     <h2 class="text-3xl font-bold mb-6">Upload Sermon Video</h2>
 
     @if ($errors->any())
@@ -29,7 +29,7 @@
             <input type="file" name="video" id="video" accept="video/*" class="w-full rounded-lg px-4 py-2">
         </div>
         <div class="mb-4">
-            <button type="submit" class="inline-block px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">Upload</button>
+            <button type="submit" class="inline-block px-4 py-1 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">Upload</button>
         </div>
     </form>
 </main>

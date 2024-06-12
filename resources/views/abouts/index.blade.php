@@ -30,10 +30,10 @@
     <!-- Gallery Section -->
     <section id="gallery" class="mb-12">
         <h2 class="text-3xl font-bold mb-4">Gallery</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             @foreach($latestGalleries as $gallery)
             <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl">
-                <img class="w-full h-80" src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery Image 1">
+                <img class="w-full h-64" src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery Image 1">
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50">
                     <p class="text-white text-lg font-semibold">{{$gallery->title}}</p>
                 </div>

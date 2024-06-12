@@ -10,7 +10,7 @@ class GalleryController extends Controller
     //
     public function index()
     {
-        $galleries = Gallery::all();
+        $galleries = Gallery::orderBy('created_at', 'desc')->paginate(16);
         return view('gallery.index', compact('galleries'));
     }
 
@@ -20,20 +20,26 @@ class GalleryController extends Controller
     }
 
     public function store(Request $request)
-    {
+    { 
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image_path.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // Adjust max file size as needed
             'description' => 'nullable|string',
         ]);
+        
+        $uploadedImages = [];
+        foreach ($request->file('image_path') as $image) {
+            $imagePath = $image->store('images', 'public');
+            $uploadedImages[] = $imagePath;
+        }
 
-        $imagePath = $request->file('image')->store('images', 'public');
-
-        Gallery::create([
-            'title' => $request->title,
-            'image_path' => $imagePath,
-            'description' => $request->description,
-        ]);
+        foreach ($uploadedImages as $imagePath) {
+            Gallery::create([
+                'title' => $request->title,
+                'image_path' => $imagePath,
+                'description' => $request->description,
+            ]);
+        }
 
         return redirect()->route('gallery.index')->with('success', 'Gallery item created successfully.');
     }

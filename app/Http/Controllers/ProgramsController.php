@@ -110,7 +110,7 @@ class ProgramsController extends Controller
 
         ]);
 
-        Mail::to($registration['email'])->send(new ProgramsRegistrationEmail($registration));
+        Mail::to($registration['email'])->queue(new ProgramsRegistrationEmail($registration));
 
         return redirect()->route('programs.index')->with('success', 'Registration successful');
     }

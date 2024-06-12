@@ -62,7 +62,6 @@ Route::middleware('auth')->group(function () {
     Route::post('about', [AboutController::class, 'update'])->name('about.update');
 
     //Routes for SermonVideos
-    Route::get('/sermons', [SermonsController::class, 'index'])->name('sermons.index');
     Route::get('/sermons/create', [SermonsController::class, 'create'])->name('sermons.create');
     Route::post('/sermons', [SermonsController::class, 'store'])->name('sermons.store');
     Route::get('/sermons/{sermonVideo}/edit', [SermonsController::class, 'edit'])->name('sermons.edit');
@@ -81,6 +80,13 @@ Route::get('programs/{id}/register', [ProgramsController::class, 'registerForm']
 // Custom routes for displaying and handling the contact form
 Route::get('contact', [ContactController::class, 'index'])->name('contacts.index');
 Route::post('contact', [ContactController::class, 'store'])->name('contacts.store');
+
+//Sermons
+Route::get('/sermons', [SermonsController::class, 'index'])->name('sermons.index');
+Route::get('/sermons/{sermonVideo}', [SermonsController::class, 'show'])->name('sermons.show');
+Route::get('/videos', [SermonsController::class, 'videos'])->name('sermons.videos');
+Route::post('/videos/search', [SermonsController::class, 'search'])->name('sermons.search');
+
 
 
 require __DIR__.'/auth.php';

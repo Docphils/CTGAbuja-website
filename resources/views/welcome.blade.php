@@ -51,12 +51,12 @@
                             </div>
                         </div>
 
-                        <svg class="animate-pulse size-6 shrink-0 stroke-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                        <svg class="animate-pulse size-8 shrink-0 stroke-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
                     </div>
                 </a>
 
                 <a
-                    href="{{ route('about')}}"
+                    href="{{ route('abouts.index')}}"
                     class="flex items-start mb-0 gap-4 rounded-lg bg-blue-300 p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-white/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
                 >
                     <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
@@ -75,25 +75,33 @@
                 </a>
 
                 
-                <div class="flex items-start gap-4 rounded-lg bg-blue-300 p-6  pb-0 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                    <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                        <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <g fill="#FFFFFF">
-                                <path
-                                    d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                />
-                            </g>
+                <div class="flex flex-col items-center gap-4 lg:flex-row lg:justify-between bg-gradient-to-r from-blue-500 to-purple-500 p-6 rounded-lg shadow-md">
+                    <!-- Service Time -->
+                    <a href="#" class="flex flex-col items-center justify-top flex-shrink-0 w-40 h-40 bg-white rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 0 0-8 8c0 3.866 3.65 6.975 8 6.975s8-3.109 8-6.975A8 8 0 0 0 10 2zm0 2a6 6 0 0 0-5.55 3.775c-.035.108-.054.221-.05.334L4.5 9.5v1h11v-2h-1V9.5l-.05-.392c.013-.106.035-.208.05-.308A6 6 0 0 0 10 4zm0 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" clip-rule="evenodd" />
                         </svg>
-                    </div>
-
-                    <div class="pt-3 sm:pt-5">
-                        <h2 class="text-xl font-semibold text-white dark:text-white">Vibrant Ecosystem</h2>
-
-                        <p class="mt-4 text-sm/relaxed text-white">
-                            Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                        </p>
-                    </div>
+                        <span class="text-gray-800 font-bold text-center ">Join Us 9:00AM Sundays</span>
+                    </a>
+                
+                    <!-- Donate -->
+                    <a href="#" class="flex flex-col items-center justify-top flex-shrink-0 w-40 h-40 bg-blue-300 rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M15.932 5.778a.375.375 0 0 0-.255-.105H4.323c-.174 0-.327.121-.362.29L3.182 9H1.25a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25h1.932l.485 2.41a.375.375 0 0 0 .362.29H15.68a.374.374 0 0 0 .288-.132.38.38 0 0 0 .055-.328l-1.473-4.732a.367.367 0 0 0-.285-.266zm-1.04 1.444L15.123 9h-9.003l1.029-2.778h8.76zM3.382 10.5l-.46-2.284c-.02-.1.016-.205.1-.266a.375.375 0 0 0-.1-.627H1.5v-1h1.134c.148 0 .278-.097.321-.24l1.187-4.51a.75.75 0 0 1 .722-.556h10.71c.314 0 .598.2.702.497l1.634 5.268a.75.75 0 0 1-.7 1.02h-1.573l-.518 2.578c-.029.147-.149.263-.3.292l-8.16 1.93a.375.375 0 0 0-.277.367v.5h-.25zm11.723-1.44L5.121 11h9.662l-.978 2.5H5.989l-.667 2.668h9.897a.376.376 0 0 0 .3-.149l1.473-1.947a.38.38 0 0 0 .078-.213l1.006-6.05a.372.372 0 0 0-.214-.393.374.374 0 0 0-.393.013zM14.372 7.5H5.99L5.48 9h9.385L14.372 7.5z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-white text-lg bg-blue-500 font-bold text-center p-2 rounded-full">Donate</span>
+                    </a>
+                
+                    <!-- Join Live Sermon -->
+                    <a href="#" class="flex flex-col items-center justify-top flex-shrink-0 w-40 h-40 bg-white rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3.456 10.22a1.75 1.75 0 0 1 2.346-1.625l5.582 2.05c.4.147.644.552.566.967l-.5 3a1 1 0 0 1-1.171.82l-3.527-.55a1.75 1.75 0 0 1-1.417-1.048l-.799-1.874zM9.5 3a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15zm0 1.5a6 6 0 1 0 0 12 6 6 0 0 0 0-12z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-white font-bold text-center mt-2">Live Sermon</span>
+                    </a>
                 </div>
+                
+
                 <!--Gallery Section -->
                 <div class="flex items-start gap-4 rounded-lg bg-blue-300 pt-6 pl-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-3 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
                     <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
@@ -103,27 +111,26 @@
                     <div class="pt-1 sm:pt-5">
                         <h2 class="text-xl font-semibold self-center text-white dark:text-white">Gallery</h2>
 
-                        <p class="mt-1 text-sm/relaxed text-white">
-                            <div class="container mx-auto">
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                                    <!-- Gallery items -->
-                                    @foreach($latestGalleries as $gallery)
-                                    <a href="{{ route('gallery.show', $gallery->id) }}" class="relative h-full max-h-36">
-                                        <div class="relative h-full max-h-36 overflow-hidden rounded-lg shadow-md hover:shadow-xl">
-                                            <img class="relative w-full h-full" src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery image">
-                                            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50">
-                                                <p class="text-white text-lg font-semibold">{{ $gallery->title }}</p>
-                                            </div>
+                        <div class="container mx-auto">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pr-10 ">
+                                <!-- Gallery items -->
+                                @foreach($latestGalleries as $gallery)
+                                <a href="{{ route('gallery.show', $gallery->id) }}" class="relative h-full w-full max-h-36">
+                                    <div class="relative w-full h-full max-h-36 overflow-hidden rounded-lg shadow-md hover:shadow-xl">
+                                        <img class="w-full h-auto object-cover" src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery image">
+                                        <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50">
+                                            <p class="text-white text-lg font-semibold">{{ $gallery->title }}</p>
                                         </div>
-                                    </a>
-                                    @endforeach
-                                </div>
+                                    </div>
+                                </a>
+                                @endforeach
                             </div>
-                        </p>
+                        </div>
+                        
                     </div>
-                <a class="mr-6 self-center" href="{{ route('gallery.index') }}">
-                    <svg class="size-6 shrink-0  stroke-[#ffffff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                </a>
+                    <a class="absolute right-0 mr-8 self-center" href="{{ route('gallery.index') }}">
+                        <svg class="size-8 shrink-0  stroke-[#ffffff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                    </a>
                 </div>
 
             </div>

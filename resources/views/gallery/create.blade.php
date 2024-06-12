@@ -1,7 +1,7 @@
 @include('layouts.header')
 
-<main class="container text-white mx-auto py-12 px-4">
-    <h1 class="text-4xl font-bold mb-8">Add New Gallery Item</h1>
+<main class="container text-white mx-auto py-12 px-4 w-1/2 shadow-lg">
+    <h1 class="text-4xl font-bold mb-8">Upload Images</h1>
 
     <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data" class="bg-blue-300 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
         @csrf
@@ -10,8 +10,8 @@
             <input type="text" id="title" name="title" class="w-full text-black p-3 bg-white rounded-lg border border-purple-600 focus:outline-none focus:border-blue-500" required>
         </div>
         <div class="mb-4">
-            <label for="image" class="block text-lg font-medium mb-2">Image</label>
-            <input type="file" id="image" name="image" class="w-full text-black p-3 bg-white rounded-lg border border-purple-600 focus:outline-none focus:border-blue-500" required>
+            <label for="image_path" class="block text-lg font-medium mb-2">Images</label>
+            <input type="file" id="image_path" name="image_path[]" multiple accept="image/*" class="w-full text-black p-3 bg-white rounded-lg border border-purple-600 focus:outline-none focus:border-blue-500" required>
         </div>
         <div class="mb-4">
             <label for="description" class="block text-lg font-medium mb-2">Description</label>

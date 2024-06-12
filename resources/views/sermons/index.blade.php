@@ -24,9 +24,54 @@
         </div>
     </section>
 
-    <!-- Previous Sermons Section -->
+    <!-- Previous Sermons Section-->
+    <section id="previous-sermons" class="mb-6">
+        <div class="flex justify-between">
+            <h2 class="text-3xl font-bold mb-6">Previous Sermons</h2>
+            @if (auth()->check())
+                <a href="{{ route('sermons.create') }}" class="text-lg bg-purple-600 shadow-lg p-2 mb-6 rounded-lg text-white hover:text-gray-200">Upload Sermon</a>
+            @endif 
+        </div>
+        <div id="sermons-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Display videos from the database -->
+            @foreach($sermonVideos as $video)
+                <div class="block bg-blue-300 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+                    <a href="{{ route('sermons.show', $video->id) }}" class="text-white mb-4">
+                        <h3 class="text-2xl font-semibold mb-2">{{ $video->title }}</h3>
+                        <p class="leading-relaxed line-clamp-2 ">{{ $video->description }}</p>
+                    </a>
+                    <video controls class="w-full">
+                        <source src="{{ asset($video->video_url) }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    @if (auth()->check())
+                    <div class="mt-4 flex justify-between">
+                        <a href="{{ route('sermons.edit', $video->id) }}" class="text-lg text-white hover:text-gray-200">Edit</a>
+                        <form action="{{ route('sermons.destroy', $video->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-lg text-red-600 hover:text-red-800">Delete</button>
+                        </form>
+                    </div>
+                    @endif
+                </div>
+            @endforeach
+            
+    </section>
+    <div class="mb-6 text-center">
+        <a href="{{ route('sermons.videos') }}" class="text-lg text-white hover:text-gray-200 bg-blue-300 shadow-lg p-2 mb-6 rounded-lg ">View All Sermons</a>
+    </div>
+
+    <!-- Youtube Videos Section -->
     <section id="previous-sermons" class="mb-12">
-        <h2 class="text-3xl font-bold mb-6">Previous Sermons</h2>
+        <h2 class="text-2xl font-bold mb-6">Videos from our channel</h2>
+        <div id="sermons-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Display YouTube videos -->
+            @if (isset($errorMessage))
+            <div class="bg-red-600 p-4 rounded-lg mb-6">
+                <p class="text-white">{{ $errorMessage }}</p>
+            </div>
+        @endif
         <div id="sermons-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Display YouTube videos -->
             @foreach($videos as $video)
@@ -45,25 +90,7 @@
                 </div>
             @endforeach
 
-            <!-- Display videos from the database -->
-            @foreach($sermonVideos as $video)
-                <div class="block bg-blue-300 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
-                    <h3 class="text-2xl font-semibold mb-2">{{ $video->title }}</h3>
-                    <p class="leading-relaxed">{{ $video->description }}</p>
-                    <video controls class="w-full">
-                        <source src="{{ asset($video->video_url) }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="mt-4 flex justify-between">
-                        <a href="{{ route('sermons.edit', $video->id) }}" class="text-lg text-white hover:text-gray-200">Edit</a>
-                        <form action="{{ route('sermons.destroy', $video->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="text-lg text-red-600 hover:text-red-800">Delete</button>
-                        </form>
-                    </div>
-                </div>
-            @endforeach
+            
         </div>
     </section>
 </main>

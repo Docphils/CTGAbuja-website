@@ -13,7 +13,7 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $latestGalleries = Gallery::latest()->take(3)->get();
+        $latestGalleries = Gallery::latest()->take(8)->get();
         $clergy = Worker::where('type', 'clergy')->get();
         $otherWorkers = Worker::where('type', 'other_workers')->get();
         $about = About::first();
