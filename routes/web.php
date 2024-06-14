@@ -10,6 +10,9 @@ use App\Http\Controllers\SermonsController;
 use App\Http\Controllers\WorkersController;
 use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\UserController;
+
+
 
 
 Route::get('/', function () {
@@ -28,9 +31,9 @@ Route::resource('workers', WorkersController::class);
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [UserController::class, 'dashboard'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -73,6 +76,15 @@ Route::middleware('auth')->group(function () {
     //Account Details Route
     Route::resource('accounts', AccountController::class)->except(['index']);
 
+});
+
+Route::middleware(['auth', 'can:admin'])->group(function () {
+    Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
+    Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
+    Route::get('/admin/users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/admin/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+    Route::delete('/admin/users/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
 });
 
 Route::resource('ministries', MinistryController::class)->only(['show', 'index']);

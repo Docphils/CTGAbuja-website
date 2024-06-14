@@ -14,14 +14,24 @@
                     <section class="bg-purple-600 p-6 rounded-lg shadow-md mb-6">
                         <h2 class="text-2xl font-semibold mb-4">Site Details</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <p class="text-lg mb-2"><strong>Total Users:</strong> </p>
-                                <p class="text-lg mb-2"><strong>Total Programs:</strong> </p>
-                                <p class="text-lg mb-2"><strong>Total Activities:</strong> </p>
+                            <div class="border-r-4">
+                                <p class="flex text-lg text-gray-200 mb-2 justify-between"><strong>Total Users:   <span class="text-white">{{$userCount}}</span></strong> 
+                                    @can('admin')
+                                        <a href="{{ route('admin.users') }}" class="text-yellow-300 pr-6">Manage Users</a>
+                                    @endcan
+                                </p>
+                                <p class="text-lg mb-2 text-gray-200"><strong>Upcoming Programs:   <span class="text-white">{{$upcomingPrograms}}</span></strong></p>
+                                <p class="text-lg mb-2 text-gray-200"><strong>Total Ministries:   <span class="text-white">{{$ministries}}</span></strong> </p>
+                                <p class="text-lg mb-2 text-gray-200"><strong>Total Clergy:   <span class="text-white">{{$clergy}}</span></strong> </p>
                             </div>
                             <div>
-                                <p class="text-lg mb-2"><strong>Total Sermons:</strong> </p>
-                                <p class="text-lg mb-2"><strong>Latest Registered Users:</strong> </p>
+                                <p class="text-lg mb-2 text-gray-200"><strong>Total Sermons:   <span class="text-white">{{$sermons}}</span></strong> </p>
+                                <p class="text-lg mb-2 text-gray-200"><strong> Total Workers:   <span class="text-white">{{$workers}}</span></strong> </p>
+                                <p class="text-lg mb-2 text-gray-200 flex justify-between"><strong> Contact Form Messages:   <span class="text-white">{{$contactMessages}}</span></strong>
+                                    @can('admin')
+                                        <a href="{{ route('contacts.messages') }}" class="text-yellow-300 pr-6">View Messages</a>
+                                    @endcan
+                                </p>
                             </div>
                         </div>
                     </section>

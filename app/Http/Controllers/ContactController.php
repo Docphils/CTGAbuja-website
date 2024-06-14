@@ -34,7 +34,7 @@ class ContactController extends Controller
         $contact->save();
 
         // Send an email to the admin
-        Mail::to('admin@example.com')->queue(new ContactFormEmail($contact));
+        Mail::to('info@ctgabuja.com.ng')->queue(new ContactFormEmail($contact));
 
         // Redirect with a success message
         return redirect()->route('contacts.index')->with('success', 'Thank you for contacting us! We will get in touch with you soon.');
