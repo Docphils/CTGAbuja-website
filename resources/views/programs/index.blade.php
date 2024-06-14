@@ -71,7 +71,7 @@
         <h2 class="text-3xl font-bold mt-6 mb-6">Past Programs</h2>
 
         @foreach($pastPrograms as $program)
-        <div class="grid grid-cols-3 mb-8 bg-blue-300 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+        <div class="grid grid-cols-3 mb-8 bg-purple-500 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
             <div class="col-span-2">
                 <h3 class="text-2xl text-gray-50 font-semibold">{{ $program->title }}</h3>
                 <hr class="border-purple-600 border-2">

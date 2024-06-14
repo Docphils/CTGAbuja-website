@@ -21,7 +21,7 @@
                 @endif
             @endif
         </div>
-        <form action="{{ route('contacts.store') }}" method="POST" class="bg-blue-300 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+        <form action="{{ route('contacts.store') }}" method="POST" class="bg-purple-500 p-8 rounded-lg shadow-lg hover:shadow-lg transition duration-300 ease-in-out">
             @csrf
             <div class="mb-4">
                 <label for="name" class="block text-lg font-medium mb-2">Name</label>
@@ -35,7 +35,7 @@
                 <label for="message" class="block text-lg font-medium mb-2">Message</label>
                 <textarea id="message" name="message" rows="6" class="w-full text-black p-3 bg-white rounded-lg border border-gray-600 focus:outline-none focus:border-blue-500" required></textarea>
             </div>
-            <button type="submit" class="w-full py-3 bg-purple-700 text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out">
+            <button type="submit" class="w-full py-3 bg-purple-700 text-lg font-semibold rounded-lg hover:bg-purple-600 transition duration-300 ease-in-out">
                 Send Message
             </button>
         </form>

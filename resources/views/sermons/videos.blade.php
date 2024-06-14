@@ -8,15 +8,15 @@
         </form>
         <div id="sermons-container" class="grid grid-cols-1 mb-3 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($sermonVideos as $video)
-                <div class="block bg-blue-300 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+                <div class="block bg-purple-500 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
                     <a href="{{ route('sermons.show', $video->id) }}" class="text-white mb-4">
                         <h3 class="text-2xl font-semibold mb-2">{{ $video->title }}</h3>
-                        <p class="leading-relaxed line-clamp-2">{{ $video->description }}</p>
                     </a>
                     <video controls class="w-full">
                         <source src="{{ asset($video->video_url) }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                    <p class="leading-relaxed line-clamp-2">{{ $video->description }}</p>
                     @if (auth()->check())
                         <div class="mt-4 flex justify-between">
                             <a href="{{ route('sermons.edit', $video->id) }}" class="text-lg text-white hover:text-gray-200">Edit</a>

@@ -2,21 +2,21 @@
 
 <main class="container text-white mx-auto py-12 px-4 pt-4">
     @if(auth()->check())
-        <a class="bg-blue-500 text-white px-4 py-2 rounded-lg" href="{{ route('ministries.create') }}">Add Ministry</a>
+        <a class="bg-purple-500 text-white px-4 py-2 rounded-lg" href="{{ route('ministries.create') }}">Add Ministry</a>
     @endif
 
 
     @foreach ($ministries as $ministry)
         <section id="{{ strtolower(str_replace(' ', '-', $ministry->name)) }}" class="mb-12">
             <h2 class="text-3xl font-bold mb-4 mt-4">{{ $ministry->name }}</h2>
-            <div class="bg-blue-300 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+            <div class="bg-purple-500 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
                 <img class="w-full h-64 object-cover rounded-lg mb-4" src="{{ asset('storage/' . $ministry->image_path) }}" alt="{{ $ministry->name }}">
                 <p class="text-lg leading-relaxed mb-4 line-clamp-1">
                     {{ $ministry->description }}
                 </p>
                 <div class="flex justify-between items-center">
                     <a href="{{ route('ministries.show', $ministry->id) }}"                        "
-                        class="inline-block px-6 py-3 text-lg font-semibold text-blue-600 bg-white rounded-lg shadow-md hover:bg-gray-100 transition duration-300 ease-in-out">
+                        class="inline-block px-6 py-3 text-lg font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 transition duration-300 ease-in-out">
                         Learn More
                     </a>
                     <div class="flex space-x-4">

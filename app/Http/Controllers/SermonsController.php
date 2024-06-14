@@ -14,6 +14,7 @@ class SermonsController extends Controller
 {
     public function index()
     {
+        $errorMessage = null; // Initialize $errorMessage
         try {
             // Fetch previous sermons from the database
             $sermonVideos = SermonVideo::orderBy('created_at', 'desc')->paginate(6);
@@ -32,7 +33,7 @@ class SermonsController extends Controller
     
             // Fetch the latest 6 videos from the channel, with caching
             $videos = Cache::remember($cacheKeyLatestVideos, now()->addHours(1), function () use ($service) {
-                $channelId = 'UCpfSzm2i2qUKFHc8QSWmOFg';
+                $channelId = 'UCVCQW4PxUdWzw9RwKPGiqag';
                 $response = $service->search->listSearch('snippet', [
                     'channelId' => $channelId,
                     'maxResults' => 6,
@@ -43,7 +44,7 @@ class SermonsController extends Controller
 
             // Fetch live broadcasts from the channel, with caching
             $liveBroadcast = Cache::remember($cacheKeyLiveBroadcast, now()->addMinutes(5), function () use ($service) {
-                $channelId = 'UCpfSzm2i2qUKFHc8QSWmOFg';
+                $channelId = 'UCVCQW4PxUdWzw9RwKPGiqag';
                 $liveResponse = $service->search->listSearch('snippet', [
                     'channelId' => $channelId,
                     'eventType' => 'live',

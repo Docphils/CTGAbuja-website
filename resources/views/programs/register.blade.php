@@ -1,7 +1,7 @@
 
 @include("layouts.header")
 
-<main class="container mx-auto w-1/2 py-12 px-4 text-white">
+<main class="container mx-auto w-1/2 py-12 px-4 rounded-lg shadow-lg text-white">
     <h2 class="text-3xl text-center font-bold mb-6">Register for {{ $program->title }}</h2>
 
     <form action="{{ route('programs.register', $program->id) }}" method="POST">

@@ -1,7 +1,7 @@
 
 @include("layouts.header")
 
-<main class="container mx-auto py-12 px-4 shadow-lg text-white w-1/2">
+<main class="container mx-auto py-12 px-4 shadow-lg rounded-lg text-white w-1/2">
     <h2 class="text-3xl font-bold mb-6">Edit Program</h2>
 
     @if($errors->any())

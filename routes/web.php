@@ -9,6 +9,8 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SermonsController;
 use App\Http\Controllers\WorkersController;
 use App\Http\Controllers\ProgramsController;
+use App\Http\Controllers\AccountController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -68,7 +70,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/sermons/{sermonVideo}', [SermonsController::class, 'update'])->name('sermons.update');
     Route::delete('/sermons/{sermonVideo}', [SermonsController::class, 'destroy'])->name('sermons.destroy');
 
-  
+    //Account Details Route
+    Route::resource('accounts', AccountController::class)->except(['index']);
+
 });
 
 Route::resource('ministries', MinistryController::class)->only(['show', 'index']);
@@ -86,6 +90,9 @@ Route::get('/sermons', [SermonsController::class, 'index'])->name('sermons.index
 Route::get('/sermons/{sermonVideo}', [SermonsController::class, 'show'])->name('sermons.show');
 Route::get('/videos', [SermonsController::class, 'videos'])->name('sermons.videos');
 Route::post('/videos/search', [SermonsController::class, 'search'])->name('sermons.search');
+
+//Account Details Route
+Route::resource('accounts', AccountController::class)->only(['index']);
 
 
 
